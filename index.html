@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Minhas Tarefas</title>
+    <!-- Path to Framework7 Library CSS, Material Theme -->
+    <link rel="stylesheet" href="www/css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
+    <link rel="stylesheet" href="www/css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="www/css/my-app.css">
+  </head>
+  <body>
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed toolbar-fixed">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+
+            <!-- Top Navbar. In Material theme it should be inside of the page-->
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">Minhas Tarefas</div>
+              </div>
+            </div>
+
+            <!-- Bottom Toolbar. In Material theme it should be inside of the page-->
+            <div class="toolbar">
+              <div class="toolbar-inner">
+                <!-- Toolbar links -->
+                <a href="#" class="link">Home</a>
+                <a href="#" class="link">Sobre</a>
+              </div>
+            </div>
+
+            <!-- Scrollable page content -->
+            <div class="page-content">
+              <div class="content-block-title">Lista de tarefas</div>
+                <div class="content-block">
+                  <div class="row">
+                    <div class="col-50">
+                      <a href="#" id="removeAll" class="button button-fill color-red" disabled >Remover Todos</a>
+                    </div>
+                  </div>
+                </div>                  
+              <div class="list-block media-list" id="item-tarefa">
+                <ul>
+
+                  <li id="none-item">
+                     <label class="label-checkbox item-content">                
+                      <div class="item-inner">
+                        <div class="item-title-row">
+                          <div class="item-title color-orange">Nenhum item adicionado...</div>
+                        </div>                        
+                      </div>
+                    </label>
+                  </li>
+
+                  <li id="primeiro" style="display:none;">
+                    <label class="label-checkbox item-content">
+                      <input type="checkbox" name="my-checkbox" class="check-tarefa" id="tarefa0">
+                      <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title-row">
+                          <div class="item-title"></div>
+                          <div class="item-after">
+                              <a href="#" class="btnVer"><img src="www/img/look.png"></a>
+                              <div class="item-after">
+                                <a href="#" class="btnExcluir"><img src="www/img/trash.png"></a>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="item-subtitle"></div>
+                        <div class="item-text"></div>
+                      </div>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="content-block">
+                <div class="list-block">
+                  <ul>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-input">
+                              <input type="text" name="name" id="novoTitulo" placeholder="Digite o título...">
+                          </div>                     
+                        </div>                       
+                      </div>
+                     <div class="item-content">
+                        <div class="item-inner">                         
+                          <div class="item-input">                              
+                              <textarea id="novaDescricao" placeholder="Descrição..."></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <span>Restam <span id="count"></span> chars.</span>  
+                <p class="buttons-row">
+                  <a href="#" class="button button-raised button-fill color-orange ripple-blue" onclick="novaTarefa()">Adicionar Tarefa</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="www/js/jquery-3.0.0.min.js"></script>
+    <!-- simplyCountable -->
+     <script type="text/javascript" src="www/js/jquery-simplyCountable.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="www/js/framework7.min.js"></script>  
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="www/js/my-app.js"></script>   
+  </body>
+</html>
